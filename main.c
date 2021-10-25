@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h> // for exit function
 
 int main()
 {
@@ -32,19 +33,22 @@ int main()
             case 'C':
                 prdAmount = 50;
                 break;
+            case 'X':
+                exit(0);
             default:
-                printf("Product code not in the list");
+                printf("Product code not in the list\n");
+                exit(0);
                 break;
 
            }
-           printf("Price: Php %d\n", prdAmount);
+           printf("Price: Php %d\n\n", prdAmount);
            printf("Number of Order >> ");
            scanf("%d", &numberOfOrder);
 
            total = numberOfOrder* prdAmount;
 
-           printf("\n\nTotal amount >> %d", total);
-           printf("\nThank you and Come Again!");
+           printf("\n\nTotal amount >> Php %d", total);
+           printf("\nThank you and Come Again!\n");
 
            return 0;
 }
